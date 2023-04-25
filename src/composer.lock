@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e6e7fe5fd9d19060838a2fee2857ca4",
+    "content-hash": "b2a8d9d0d1f1ff0be22e877566cf235c",
     "packages": [
         {
             "name": "brick/math",
@@ -5130,6 +5130,48 @@
                 }
             ],
             "time": "2023-03-29T21:42:15+00:00"
+        },
+        {
+            "name": "techbizz/product-module",
+            "version": "0.1",
+            "dist": {
+                "type": "path",
+                "url": "./product-module",
+                "reference": "8a86971ef43bff8956227b10bb0cade0709e4e04"
+            },
+            "require": {
+                "illuminate/support": "^10.9",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "dev-main"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Techbizz\\ProductModule\\ProductModuleServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Techbizz\\ProductModule\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Susant Paudel"
+                }
+            ],
+            "description": "this is product module aims to integrate with laravel",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

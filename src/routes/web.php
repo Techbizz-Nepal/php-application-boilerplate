@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Techbizz\ProductModule\ProductModuleDMLFacade;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return ProductModuleDMLFacade::getAbstractProducts();
     return view('welcome');
 });
