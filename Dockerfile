@@ -73,8 +73,7 @@ USER root
 RUN echo 'root:P@$$w0rd' | chpasswd
 COPY ./aliases.sh /root/aliases.sh
 COPY ./aliases.sh /home/apache/aliases.sh
-
-
+RUN rm -rf /var/html
 RUN sed -i 's/\r//' /root/aliases.sh && \
     sed -i 's/\r//' /home/apache/aliases.sh && \
     chown apache:apache /home/apache/aliases.sh && \
@@ -89,9 +88,8 @@ RUN echo "" >> ~/.bashrc && \
     echo "# Load Custom Aliases" >> ~/.bashrc && \
     echo "source ~/aliases.sh" >> ~/.bashrc && \
 	  echo "" >> ~/.bashrc
-ADD . /var/www/
-# COPY --chown=apache:apache . /var/www
-WORKDIR /var/www
+
+WORKDIR /var/app
 
 # RUN composer install
 

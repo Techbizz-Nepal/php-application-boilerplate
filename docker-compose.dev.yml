@@ -14,11 +14,8 @@ services:
       PHP_IDE_CONFIG: serverName=gravity
       XDEBUG_CONFIG: idekey=PHPSTORM
       COMPOSER_MEMORY_LIMIT: '-1'
-    #    volumes:
-    #      - ./projects/api.techbizz.test/conf.d/php.ini:/usr/local/etc/php/php.ini
-    #      - ./projects/api.techbizz.test/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-    #      - ./projects/api.techbizz.test/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
-    #      - ./projects/api.techbizz.test:/var/www
+    volumes:
+      - ./src/:/var/app/
     ports:
       - '9000:9000'
     networks:
@@ -42,6 +39,7 @@ services:
       - '443:443' #thamelmar
     volumes:
       - ./nginx/log:/var/log/nginx
+      - ./src/:/var/app/
     networks:
       - backend
       - frontend

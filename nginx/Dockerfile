@@ -5,7 +5,7 @@ ENV TZ ${TZ}
 COPY nginx.conf /etc/nginx/
 COPY sites /etc/nginx/sites-available
 COPY ssl /etc/nginx/ssl
-ADD ./ /var/www/
+
 RUN set -x ; \
     addgroup -g 82 -S www-data ; \
     adduser -u 82 -D -S -G www-data www-data && exit 0 ; exit 1
