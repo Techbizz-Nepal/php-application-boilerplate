@@ -1,0 +1,97 @@
+version: "3"
+
+services:
+
+  api:
+    container_name: "${APP_NAME}_php"
+    image: "${APP_NAME}/api:1.0"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      PHP_MEMORY_LIMIT: "${PHP_MEMORY_LIMIT}"
+      PHP_IDE_CONFIG: serverName=gravity
+      XDEBUG_CONFIG: idekey=PHPSTORM
+      COMPOSER_MEMORY_LIMIT: '-1'
+    #    volumes:
+    #      - ./projects/api.techbizz.test/conf.d/php.ini:/usr/local/etc/php/php.ini
+    #      - ./projects/api.techbizz.test/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    #      - ./projects/api.techbizz.test/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+    #      - ./projects/api.techbizz.test:/var/www
+    ports:
+      - '9000:9000'
+    networks:
+      backend:
+        aliases:
+          - api.techbizz.test
+    depends_on:
+      - mysql
+      - redis
+      - nginx
+
+  nginx:
+    image: "${APP_NAME}/nginx:1.0"
+    restart: unless-stopped
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: "${APP_NAME}_nginx"
+    ports:
+      - '80:80' #thamelmart
+      - '443:443' #thamelmar
+    volumes:
+      - ./nginx/log:/var/log/nginx
+    networks:
+      - backend
+      - frontend
+
+  mysql:
+    container_name: "${APP_NAME}_mysql"
+    image: "${APP_NAME}/mysql:1.0"
+    build: ./mysql
+    volumes:
+      - ~/.${APP_NAME}/data/mysql:/var/lib/mysql
+      - ./mysql/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      TZ: ${TIMEZONE}
+    networks:
+      - backend
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: "${APP_NAME}_pma"
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - "8090:80"
+    networks:
+      - backend
+    depends_on:
+      - mysql
+
+  redis:
+    build: ./redis
+    container_name: "${APP_NAME}_redis"
+    image: "${APP_NAME}/redis:1.0"
+    volumes:
+      - "~/.${APP_NAME}/data/redis:/data"
+    ports:
+      - "${REDIS_PORT}:6379"
+    networks:
+      - backend
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
