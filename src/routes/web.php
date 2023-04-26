@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Techbizz\ProductModule\ProductModuleDMLServiceFacade;
+use Techbizz\ProductModule\DMLServiceFacade;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +15,5 @@ use Techbizz\ProductModule\ProductModuleDMLServiceFacade;
 */
 
 Route::get('/', function () {
-    return ['abstractProducts' => ProductModuleDMLServiceFacade::getAbstractProducts(perPage: 10),
-        'abstractProductVariants' => ProductModuleDMLServiceFacade::getAbstractProductVariants(10),
-    ];
-
-    return view('welcome');
+    return [];
 });
