@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bcba7447db30fa4960210b35e8ab013",
+    "content-hash": "d6d264107a6095966392a13a210578fb",
     "packages": [
         {
             "name": "brick/math",
@@ -5137,7 +5137,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/product-module",
-                "reference": "c7b12696743279a6a50ab5737a22c111963380c3"
+                "reference": "b9e59bcbbd4cae369af3da2622547f338acadf41"
             },
             "require": {
                 "illuminate/support": "^10.9",
@@ -5172,6 +5172,7 @@
             ],
             "description": "this is product module aims to integrate with laravel",
             "transport-options": {
+                "symlink": false,
                 "relative": true
             }
         },

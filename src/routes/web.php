@@ -15,7 +15,9 @@ use Techbizz\ProductModule\ProductModuleDMLServiceFacade;
 */
 
 Route::get('/', function () {
-    return [ProductModuleDMLServiceFacade::getAbstractProducts(perPage: 10), ProductModuleDMLServiceFacade::getAbstractProductVariants(10)];
+    return ['abstractProducts' => ProductModuleDMLServiceFacade::getAbstractProducts(perPage: 10),
+        'abstractProductVariants' => ProductModuleDMLServiceFacade::getAbstractProductVariants(10),
+    ];
 
     return view('welcome');
 });
