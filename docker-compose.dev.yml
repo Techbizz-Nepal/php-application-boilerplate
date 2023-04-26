@@ -58,7 +58,9 @@ services:
       MYSQL_ROOT_PASSWORD: root
       TZ: ${TIMEZONE}
     networks:
-      - backend
+      backend:
+        aliases:
+          - api.techbizz.test
 
   pma:
     image: phpmyadmin/phpmyadmin

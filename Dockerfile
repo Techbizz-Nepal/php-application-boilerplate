@@ -88,7 +88,6 @@ RUN echo "" >> ~/.bashrc && \
     echo "# Load Custom Aliases" >> ~/.bashrc && \
     echo "source ~/aliases.sh" >> ~/.bashrc && \
 	  echo "" >> ~/.bashrc
-
 WORKDIR /var/app
 
 # RUN composer install

@@ -149,3 +149,7 @@ function fs() {
 		du $arg .[^.]* ./*;
 	fi;
 }
+
+
+# export paths
+export PATH="$PATH:./vendor/bin";
