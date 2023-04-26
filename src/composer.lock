@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a0e7da58421ca0a1777dabb9a805184",
+    "content-hash": "1645edaa58a7b6947d2ea3512a5e1d4a",
     "packages": [
         {
             "name": "brick/math",
@@ -5132,12 +5132,12 @@
             "time": "2023-03-29T21:42:15+00:00"
         },
         {
-            "name": "techbizz/product-module",
-            "version": "0.1",
+            "name": "techbizz/product_module",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
-                "url": "packages/product-module",
-                "reference": "ef41476d248f7cd7e57bb0dedf2783e46ae5cf87"
+                "url": "packages/product_module",
+                "reference": "a8093c0cc29825b31ce88861e149082424ec7d87"
             },
             "require": {
                 "illuminate/support": "^10.9",

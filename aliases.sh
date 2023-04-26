@@ -153,4 +153,4 @@ function fs() {
 # export paths
 export PATH="$PATH:./../vendor/bin"
 # if changes from package is not reflecting: run this command. I hope it will help.
-alias refresh="composer remove techbizz/product-module && composer require techbizz/product-module"
+alias refresh="composer remove techbizz/product_module && composer require techbizz/product_module"
