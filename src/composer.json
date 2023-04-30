@@ -16,6 +16,14 @@
             "options": {
                 "symlink": false
             }
+        },
+        {
+            "type": "path",
+            "url": "packages/auth_module",
+            "branch": "main",
+            "options": {
+                "symlink": false
+            }
         }
     ],
     "require": {
@@ -24,7 +32,8 @@
         "laravel/framework": "^10.8",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "techbizz/product_module": "@dev"
+        "techbizz/product_module": "@dev",
+        "techbizz/auth_module": "@dev"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

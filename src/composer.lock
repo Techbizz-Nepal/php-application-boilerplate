@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4785e3046c3a4dd98d451969d61d750",
+    "content-hash": "cdfe99900550f786cd0fd1cc28b5105c",
     "packages": [
         {
             "name": "brick/math",
@@ -5132,6 +5132,48 @@
             "time": "2023-04-18T13:46:08+00:00"
         },
         {
+            "name": "techbizz/auth_module",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/auth_module",
+                "reference": "9ebe5a7d85c9643a5c5e2706c9b69a36dc8633ab"
+            },
+            "require": {
+                "illuminate/support": "^10.9",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "dev-main"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Techbizz\\AuthModule\\AuthModuleServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Techbizz\\AuthModule\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Susant Paudel"
+                }
+            ],
+            "description": "Auth module",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
             "name": "techbizz/product_module",
             "version": "dev-main",
             "dist": {
@@ -7867,7 +7909,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "techbizz/product_module": 20
+        "techbizz/product_module": 20,
+        "techbizz/auth_module": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
