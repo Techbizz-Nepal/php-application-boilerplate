@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "582343db02f70691eebfbe1ff5d4947f",
+    "content-hash": "b4785e3046c3a4dd98d451969d61d750",
     "packages": [
         {
             "name": "brick/math",
@@ -5132,6 +5132,48 @@
             "time": "2023-04-18T13:46:08+00:00"
         },
         {
+            "name": "techbizz/product_module",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/product_module",
+                "reference": "440513dc9fa991de38f1e8a06fdff8d4026f6aee"
+            },
+            "require": {
+                "illuminate/support": "^10.9",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "dev-main"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Techbizz\\ProductModule\\ProductModuleProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Techbizz\\ProductModule\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Susant Paudel"
+                }
+            ],
+            "description": "this is product module aims to integrate with laravel",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "2.2.6",
             "source": {
@@ -7824,7 +7866,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "techbizz/product_module": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
